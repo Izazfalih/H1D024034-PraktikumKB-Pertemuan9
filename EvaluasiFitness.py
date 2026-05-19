@@ -1,66 +1,38 @@
-def evaluasi_fitness(kromosom, nilai_item, berat_item, kapasitas_maks):
-    """
-    Mengevaluasi fitness dari sebuah kromosom untuk Knapsack Problem.
-    
-    Jika total berat melebihi kapasitas maksimum, fitness = 0 (penalti).
-    Jika tidak, fitness = total nilai item yang dipilih.
-    
-    Args:
-        kromosom    : List biner (0/1) yang merepresentasikan item yang dipilih
-        nilai_item  : List nilai setiap item
-        berat_item  : List berat setiap item
-        kapasitas_maks: Kapasitas maksimum knapsack
-    
-    Returns:
-        fitness: Nilai fitness (total nilai item yang valid, atau 0 jika overweight)
-    """
-    total_nilai = 0
-    total_berat = 0
+# Fungsi untuk menghitung nilai fitness
+def hitung_fitness(kromosom, barang, kapasitas_tas):
+    total_harga = 0
+    total_bobot = 0
 
     for i in range(len(kromosom)):
         if kromosom[i] == 1:
-            total_nilai += nilai_item[i]
-            total_berat += berat_item[i]
+            total_harga += barang[i][1]
+            total_bobot += barang[i][2]
 
-    if total_berat > kapasitas_maks:
-        return 0
+    if total_bobot > kapasitas_tas:
+        return 0 # Penalti jika melebihi kapasitas
     else:
-        return total_nilai
+        return total_harga
 
-
-def evaluasi_populasi(populasi, nilai_item, berat_item, kapasitas_maks):
-    """
-    Mengevaluasi fitness seluruh populasi.
-    
-    Args:
-        populasi      : List kromosom
-        nilai_item    : List nilai item
-        berat_item    : List berat item
-        kapasitas_maks: Kapasitas maksimum knapsack
-    
-    Returns:
-        fitness_populasi: List nilai fitness untuk setiap kromosom
-    """
-    fitness_populasi = []
-    for kromosom in populasi:
-        fitness = evaluasi_fitness(kromosom, nilai_item, berat_item, kapasitas_maks)
-        fitness_populasi.append(fitness)
-    return fitness_populasi
-
-
+# Contoh penggunaan
 if __name__ == "__main__":
-    # Contoh item: (nilai, berat)
-    nilai_item  = [10, 20, 30, 40, 50, 25, 15, 35]
-    berat_item  = [5,  10, 15, 20, 25, 12,  7, 18]
-    kapasitas_maks = 50
+    # Data barang (nama, harga, bobot)
+    barang = [("Barang 1", 60, 10),
+              ("Barang 2", 100, 20),
+              ("Barang 3", 120, 30),
+              ("Barang 4", 90, 25),
+              ("Barang 5", 70, 15)]
 
-    # Contoh kromosom
-    kromosom1 = [1, 0, 1, 0, 0, 1, 1, 0]   # valid
-    kromosom2 = [1, 1, 1, 1, 1, 1, 1, 1]   # overweight
+    kapasitas_tas = 50 # Kapasitas maksimum tas
 
-    print("=== Evaluasi Fitness ===")
-    print(f"Kromosom 1 : {kromosom1}")
-    print(f"Fitness 1  : {evaluasi_fitness(kromosom1, nilai_item, berat_item, kapasitas_maks)}")
-    print()
-    print(f"Kromosom 2 : {kromosom2}")
-    print(f"Fitness 2  : {evaluasi_fitness(kromosom2, nilai_item, berat_item, kapasitas_maks)}")
+    # Definisi contoh populasi awal
+    populasi_awal = [[1, 0, 1, 0, 1], # Contoh kromosom individu
+                     [0, 1, 0, 1, 0],
+                     [1, 1, 0, 0, 1]]
+
+    # Contoh penggunaan
+    fitness_populasi = [hitung_fitness(individu, barang, kapasitas_tas) for individu in populasi_awal]
+
+    # Menampilkan nilai fitness
+    print("\nNilai Fitness:")
+    for idx, fitness in enumerate(fitness_populasi):
+        print(f"Individu {idx+1}: Fitness = {fitness}")

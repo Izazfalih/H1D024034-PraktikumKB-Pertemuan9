@@ -1,0 +1,310 @@
+ACARAPRAKTIKUM9ALGORITMAGENETIKA1
+TUJUAN● Mengetahuidasar-dasarAlgoritmaGenetika● Mengetahuidasar-dasarCaraKerjaAlgoritmaGenetika● MengetahuipenerapanAlgoritmaGenetikadalamkasusnyata.● TerampilmenerapkanAlgoritmaGenetikadalamkasusnyata.
+DASARTEORI1. AlgoritmaGenetika(Algen)danSejarahnyaAlgoritmaGenetika(Algen)merupakansalahsatu metodepencariandanoptimasiberbasispopulasiyangterinspirasiolehprosesevolusibiologis,sepertiseleksialamdanpewarisangenetik.KonsepinipertamakalidikembangkanolehJohnHollandpadatahun1960-andiUniversityofMichigan.Hollandmengadaptasiprinsip-prinsipdariteoriDarwintentangseleksialamdanmenerapkannyadalamkontekskomputasiuntukmenyelesaikanmasalahoptimasiyangkompleks.Penelitianini semakinberkembang,terutamasetelahbukunyaAdaptationinNaturalandArtificialSystemsterbitpadatahun1975.
+2. PengertiandanLatarBelakangAlgoritmaGenetikaSecaraumum,AlgoritmaGenetikaadalahmetodepencariansolusioptimalyangterinspirasidariprosesevolusimakhlukhidup.Algenbekerjadenganmenggunakanpopulasisolusisementarayangterusberevolusidarigenerasike generasimelaluioperasigenetiksepertiseleksi,crossover, danmutasi.Alasanutamapengembanganalgoritmainiadalahkarenabeberapamasalahoptimasiyangsangatkomplekstidakdapatdiselesaikandenganmetodedeterministikbiasa.Olehkarenaitu,AlgoritmaGenetikadikembangkanuntukmenanganimasalahoptimasidimanasolusiyangtepatsulitditemukandenganpencarianeksak.
+3. CaraKerjaAlgoritmaGenetikaAlgoritmaGenetikadimulaidenganmembangkitkanpopulasiawalyangberisikumpulanindividu,dimanasetiapindividumewakilisolusipotensial.Setiapindividu
+77
+dinilaiberdasarkanfitnessfunction,yangmengukurseberapabaiksolusitersebutdalammemecahkanmasalahyangdihadapi.Selanjutnya,algoritmamelakukanseleksi,dimanaindividudenganfitnessterbaikdipilihuntukmenghasilkanketurunanmelaluioperasicrossoverdanmutasi.Prosesiniterusdiulanguntukbeberapagenerasi,denganharapansolusiyanglebihbaikakanmunculseiringberjalannyawaktu.
+Langkah-langkahutamadalamAlgoritmaGenetikameliputi:
+1. Inisialisasi :Membuatpopulasiawalsecaraacak.2. Evaluasi :Menghitungfitnesssetiapindividu.3. Seleksi :Memilihindividuterbaikuntukmenghasilkanketurunan.4. Crossover :Menggabungkanduaindividuuntukmenghasilkanketurunanbaru.5. Mutasi :Mengubahbeberapabagiandari individuuntukmenjagakeragamanpopulasi.6. GenerasiBaru:Menggantikanpopulasilamadengangenerasibaru.
+4. ContohStudiKasusAlgoritmaGenetikaAlgoritmaGenetikatelahditerapkandalamberbagaistudikasus,terutamapadamasalahoptimasisepertiKnapsackProblemdanTravelingSalesmanProblem(TSP),kasusPenjadwalan,danlainsebagainya.
+78
+
+1. KnapsackProblem: Dalammasalahini,contohnyaseseorangharusmemilihbarang-barangyangakandimasukkankedalamtasdengankapasitasterbatas,dimanasetiapbarangmemilikibobotdannilai.TujuanAlgoritmaGenetikadalamkonteksiniadalahmenemukankombinasibarangyangmemberikannilaimaksimumtanpamelebihikapasitastas.2. TravelingSalesmanProblem(TSP): TSPadalahmasalahoptimasirutedimanaseorangpenjualharusmengunjungibeberapakotadenganjaraktertentudankembalikekotaasal,dengantujuanmeminimalkantotaljarakperjalanan.AlgoritmaGenetikadigunakanuntukmencariurutankotayangoptimal.3. KasusPenjadwalanSalahsatuaplikasipentingAlgoritmaGenetikaadalahdalammenyelesaikanmasalahpenjadwalan,yangseringkalikomplekskarenamelibatkanbanyakvariabeldanbatasan.Penjadwalanadalahprosesmengatursumberdaya,sepertiwaktu,tenagakerja,ataumesin,untukmelakukanserangkaiantugasdalamwaktuyangoptimal.ContohyangpalingumumdarimasalahiniadalahPenjadwalanKaryawan,PenjadwalanProyek,danPenjadwalanProduksidiPabrik.a. PenjadwalanKaryawan:Dalammasalahini,sebuahperusahaanharusmenentukanjadwalkerjabagikaryawannya,denganmemperhatikanberbagaibatasan,sepertijumlahjamkerjamaksimalperminggu,harilibur, ataukeahlianyangdibutuhkanpadajam tertentu.TujuanAlgoritmaGenetikaadalahmenemukanjadwalyangmemenuhisemuabatasaninisekaligusmemaksimalkanefisiensitenagakerja.Denganmelakukanseleksi,crossover, dan mutasipadakumpulansolusi(jadwal),AlgoritmaGenetikadapatmenghasilkanjadwalyangoptimalataumendekatioptimalyangmengurangiwaktupenyusunanjadwalsecaramanual.b. PenjadwalanProyek:Dalamkonteksmanajemenproyek,penjadwalanmelibatkanpengalokasiansumberdaya (misalnya,pekerjadanperalatan)untukmenyelesaikanserangkaiantugasproyekdalambatasanwaktudan anggarantertentu.Masalahini seringdikenaldenganProjectSchedulingProblematau Job ShopSchedulingProblem.AlgoritmaGenetikaditerapkanuntukmengoptimalkan
+79
+urutanpengerjaantugas,sehinggawaktupenyelesaianproyekdapatdiminimalkandanpenggunaansumberdayadapatdioptimalkan.c. PenjadwalanProduksidi Pabrik:Masalahpenjadwalanproduksidipabrikmelibatkanpenentuanurutantugasproduksiuntukmesin-mesinyang ada dengantujuanmengoptimalkanwaktuprosesdanmengurangiwaktuidlemesin.AlgoritmaGenetikadapatdigunakanuntukmemecahkanmasalahini denganmencariurutantugasyangmeminimalkanwaktu total penyelesaian(makespan),sertamemaksimalkanproduktivitaspabrik.
+5. HubunganAlgoritmaGenetikadenganKnapsack
+DalammasalahKnapsack,AlgoritmaGenetikasangatefektifdigunakankarenamampumenemukansolusioptimalataumendekatioptimaluntukmasalahdenganjumlahvariabelyangsangatbesar. Prosescrossoverdan mutasimemungkinkaneksplorasiruangsolusiyanglebihluas,sementaraseleksimemastikanbahwasolusiterbaiktetapbertahandalamevolusigenerasiberikutnya.AlgoritmaGenetikadapatdigunakandalamskenariodi manaterdapatbanyakpilihanbarangdanbatasankapasitas,dengantujuanuntukmemaksimalkanprofitatauutilitasdaribarangyangdipilih.
+DenganAlgen,tujuanutamanyaadalahuntukmenemukankombinasisolusiterbaikdenganwaktukomputasiyanglebihefisiendibandingkanmetodepencarianlengkap.InimembuatAlgensangatbergunadalamkonteksmasalahoptimasiyangsangatbesardankompleks.
+80
+
+ALATDANBAHAN1. CodeEditor(VisualStudioCode/ CursorCodeEditor/ Notepad/ SublimeText/ dsb)2. EnvironmentPythonyangtelahsiapdigunakan3. LibrarymatplotlibPastikanAndatelahmenginstalmatplotlibuntukplottinggrafikdenganmenjalankanpipinstallmatplotlibjikabelumterinstal.4. LibrarytkinterLibraryTkintermerupakanlibrarypythonuntukmembuataplikasidalambentukGUI.
+PERCOBAAN1. ProsesInisiasiPopulasiProsesinisiasipopulasiadalahlangkahpertamadalamAlgoritmaGenetika(AG)di manakita membangkitkansejumlahindividu(kromosom)secaraacakuntukmembentukpopulasiawal.Setiapindividumerepresentasikansolusipotensialterhadapmasalahyanginginkitaselesaikan,dalamhaliniadalahKnapsackProblem.DalamKnapsackProblem,kitamemilikisejumlahbarangdengannilai(harga)dan bobottertentu.Tujuannyaadalahmemilihkombinasibarangyangdapatdimasukkankedalamtasdengankapasitasterbatasuntukmemaksimalkantotalnilaibarangtanpamelebihikapasitastas.Setiapkromosomdirepresentasikansebagaiarraybiner, di manasetiapgenmenunjukkanapakahbarangtersebutdipilih(1)atautidak(0).JikakitamemilikiNbarang,makasetiapkromosomakanmemilikiNgen.
+81
+ContohCaraKerja:
+Misalkankitamemiliki5barang.Kitainginmembangkitkanpopulasiawaldengan10individu.Setiapindividuakanmemiliki5genyangdibangkitkansecaraacak.
+Contohkromosom:
+1. Individu1: [1,0,1,0,1](Barangke-1,ke-3,danke-5dipilih)2. Individu2: [0,1,0,1,0](Barangke-2danke-4dipilih)
+BuatSebuahFolderdengannamaAlgoritmaGenetika,lalutambahkanfiledenganNamaFileInisiasiPopulasi.py, kemudianketikkankodeberikut
+importrandom
+# Fungsiuntukinisialisasipopulasidefinisialisasi_populasi(jumlah_populasi,jumlah_gen):populasi= []fori in range(jumlah_populasi):# Membuatkromosomdengangenbinersecaraacakkromosom= [random.randint(0,1) for_ inrange(jumlah_gen)]populasi.append(kromosom)returnpopulasi
+# Contohpenggunaanjumlah_populasi= 10 # Jumlahindividudalampopulasijumlah_gen= 5 # Jumlahbarang(gen)dalamkromosom
+82
+
+populasi_awal= inisialisasi_populasi(jumlah_populasi,jumlah_gen)
+# Menampilkanpopulasiawalprint("PopulasiAwal:")foridx,individuin enumerate(populasi_awal):print(f"Individu{idx+1}:{individu}")
+PenjelasanKodePythonsecaraDetail:
+● ImportModulrandom: Modulinidigunakanuntukmembangkitkanangkaacakdalamprosesinisialisasipopulasi.● Fungsiinisialisasi_populasi:○ Parameter:■ jumlah_populasi: Jumlahindividuyangingindibangkitkandalampopulasiawal.■ jumlah_gen: Jumlahgendalamsetiapkromosom,sesuaidenganjumlahbarangyangada.○ Proses:■ Membuatlistkosongpopulasiuntukmenyimpanindividu-individu.
+■ Menggunakanloopforuntukmembangkitkanjumlah_populasiindividu.■ Dalamsetiapiterasi,membangkitkankromosomdengangenbinersecaraacakmenggunakanlistcomprehension[random.randint(0,1) for_ inrange(jumlah_gen)].■ Menambahkankromosomtersebutkedalampopulasi.○ Return:■ Mengembalikanlistpopulasiyangberisiindividu-individudengankromosomacak.● ContohPenggunaan:○ Menentukanjumlah_populasidanjumlah_gensesuaikebutuhan.
+83
+○ Memanggilfungsiinisialisasi_populasiuntukmembangkitkanpopulasiawal.○ Menampilkanpopulasiawaldenganmencetaksetiapindividubesertakromosomnya.
+SilahkanRunningdanhasilnyaakanmemunculkansepertiberikut.
+PopulasiAwal:Individu1: [1,1, 0, 0, 1]Individu2: [1,0, 1, 0, 0]Individu3: [0,1, 1, 0, 1]Individu4: [1,0, 1, 0, 0]Individu5: [1,1, 0, 1, 1]Individu6: [1,1, 1, 0, 0]Individu7: [1,0, 1, 1, 0]Individu8: [0,1, 1, 1, 1]Individu9: [1,0, 1, 0, 0]Individu10:[0,1, 0, 0, 1]
+2. ProsesEvaluasiFitnessEvaluasifitnessadalahprosesmenghitungnilaifitnessuntuksetiapindividudalampopulasi.Nilaifitnessmenggambarkanseberapabaiksolusi(kromosom)tersebutdalammenyelesaikanmasalahyangdiberikan.DalamKnapsackProblem,nilaifitnessdapatdidefinisikansebagaitotalnilai(harga)barangyangdipilihdalamkromosom,dengansyarattotalbobotbarangtidakmelebihikapasitastas.Jikatotalbobotmelebihikapasitas,makaindividutersebutdianggaptidakvaliddandiberipenalti(fitness=0).
+ContohCaraKerja:
+Misalkankitamemilikidatabarangsebagaiberikut:
+Barang Harga Bobot
+Barang1 60 10
+Barang2 100 20
+84
+Barang3 120 30
+Barang4 90 25
+Barang5 70 15
+Kapasitastasadalah50.
+Individu: [1,0,1,0,1]
+a. Barangyangdipilih:Barang1,Barang3,Barang5b. Totalharga:60+120+70=250c. Totalbobot:10+30+15=55d. Karenatotalbobot(55)melebihikapasitastas(50),makafitness=0(penalti).
+Individu: [0,1,0,1,0]
+a. Barangyangdipilih:Barang2,Barang4b. Totalharga:100+90=190c. Totalbobot:20+25=45d. Totalbobottidakmelebihikapasitas,sehinggafitness=190.
+PadaSebuahFolderdengannamaAlgoritmaGenetika, tambahkanfiledenganNamaFileEvaluasiFitness.py, kemudianketikkankodeberikut
+# Databarang(nama,harga,bobot)barang= [("Barang1",60,10),("Barang2",100,20),("Barang3",120,30),("Barang4",90,25),("Barang5",70,15)]
+kapasitas_tas= 50 # Kapasitasmaksimumtas
+# Fungsiuntukmenghitungnilaifitnessdefhitung_fitness(kromosom,barang,kapasitas_tas):total_harga= 0total_bobot= 0
+85
+fori in range(len(kromosom)):if kromosom[i]== 1:total_harga+= barang[i][1]total_bobot+= barang[i][2]if total_bobot> kapasitas_tas:return0 # Penaltijikamelebihikapasitaselse:returntotal_harga
+# Definisicontohpopulasiawalpopulasi_awal= [[1,0, 1, 0, 1], # Contohkromosomindividu[0,1, 0, 1, 0],[1,1, 0, 0, 1],# Tambahkanlebihbanyakindividusesuaikebutuhan]
+# Contohpenggunaanfitness_populasi= [hitung_fitness(individu,barang,kapasitas_tas)forindividuin populasi_awal]
+# Menampilkannilaifitnessprint("\nNilaiFitness:")foridx,fitnessin enumerate(fitness_populasi):print(f"Individu{idx+1}:Fitness= {fitness}")
+PenjelasanKodePythonsecaraDetail:
+● DataBarang:○ Listbarangberisitupleyangmerepresentasikansetiapbarangdengan
+format(nama,harga,bobot).
+○ Contoh:("Barang1",60,10)berartiBarang1memilikiharga60danbobot10.● KapasitasTas:○ Variabelkapasitas_tasmenentukankapasitasmaksimumtas,yaitu50.
+● Fungsihitung_fitness:○ Parameter:■ kromosom: Listgenyangmerepresentasikanindividu.○ Proses:
+86
+■ Menginisialisasitotal_hargadantotal_bobotdengannilai0.
+■ Menggunakanloopforuntukmemeriksasetiapgendalamkromosom.■ Jikagenbernilai1(barangdipilih),maka:■ Menambahkanhargabarangketotal_harga.
+■ Menambahkanbobotbarangketotal_bobot.
+■ Setelahsemuagendiperiksa,memeriksaapakahtotal_bobot
+melebihikapasitas_tas:■ Jikaya,mengembalikannilaifitness0sebagaipenalti.■ Jikatidak,mengembalikantotal_hargasebagainilaifitness.○ Return:■ Nilaifitness(0atautotalhargabarangyangdipilih).● ContohPenggunaan:○ Menghitungnilaifitnessuntuksetiapindividudalampopulasi_awalmenggunakanlistcomprehension.○ Menampilkannilaifitnesssetiapindividudenganmencetaknya.
+HasildariKodetersebutakanmenyerupaisebagaiberikut.
+NilaiFitness:Individu1: Fitness= 0Individu2: Fitness= 190Individu3: Fitness= 230
+3. ProsesSeleksiProsesseleksibertujuanuntukmemilihindividu-individuyangakanmenjadiorangtua(parent)untukmenghasilkangenerasiberikutnyamelaluiprosescrossoverdanmutasi.Seleksidilakukanberdasarkannilaifitness,dimanaindividudenganfitnesslebihtinggimemilikipeluanglebihbesaruntukdipilih.Prosesseleksibertujuanuntukmemilihindividu-individuyangakanmenjadiorangtua(parent)untukmenghasilkangenerasiberikutnyamelaluiprosescrossover
+87
+danmutasi.Seleksidilakukanberdasarkannilaifitness,dimanaindividudenganfitnesslebihtinggimemilikipeluanglebihbesaruntukdipilih.Metodeseleksiyangumumdigunakan:● RouletteWheelSelection: Individudipilihsecaraprobabilistikberdasarkanproporsinilaifitnessterhadaptotalfitnesspopulasi.● TournamentSelection: Beberapaindividudipilihsecaraacak,kemudianindividudenganfitnesstertinggidiantaramerekadipilihsebagaiparent.
+ContohCaraKerja:
+A. RouletteWheelSelection:
+RouletteWheelSelectionadalahmetodeseleksidalamAlgoritmaGenetikayangmemilihindividusebagaiparentberdasarkanprobabilitasyangproporsionalterhadapnilaifitnessmereka.Individudengannilaifitnesslebihtinggimemilikipeluanglebihbesaruntukdipilih,tetapiindividudengannilaifitnesslebihrendahmasihmemilikikesempatan.
+KonsepDasar:
+● Bayangkansebuahrodaroulette(rodakeberuntungan)yangdibagimenjadibeberapasektor, dimanasetiapsektormewakilisatuindividudalampopulasi.● Luassektoruntuksetiapindividuproporsionalterhadapnilaifitnessindividutersebut.● Semakintingginilaifitness,semakinbesarluassektornya,dansemakinbesarpeluangnyauntukdipilih.● Prosesseleksidilakukandenganmemutarrodadanmelihatpadasektormanarodaberhenti.Individuyangterpilihadalahindividuyangsektornyaterkenapenunjuk.
+Langkah-langkah:
+1. MenghitungTotalFitnessPopulasi:○ Menjumlahkansemuanilaifitnessindividudalampopulasi.2. MenghitungProbabilitasSeleksiuntukSetiapIndividu:
+88
+○ Probabilitasseleksi=(Fitnessindividu)/ (Totalfitnesspopulasi)3. MenghitungProbabilitasKumulatif:○ Menjumlahkanprobabilitasseleksisecarakumulatifuntuksetiapindividu.4. MenghasilkanBilanganAcakantara0dan1:○ Bilanganacakiniakandigunakanuntukmenentukanindividuyangterpilih.5. MenentukanIndividuyangTerpilih:○ Jikabilanganacakkurangdariatausamadenganprobabilitaskumulatifindividutersebut,makaindividutersebutdipilih.
+Contoh:
+Misalkankitamemilikipopulasidengan4individudannilaifitnesssebagaiberikut:
+● Individu1: Fitness=1● Individu2: Fitness=2● Individu3: Fitness=3● Individu4: Fitness=4
+Langkah1:MenghitungTotalFitnessPopulasi
+Totalfitness=1+2+3+4=10
+Langkah2:MenghitungProbabilitasSeleksiuntukSetiapIndividu
+● ProbabilitasIndividu1=1/ 10=0.1● ProbabilitasIndividu2=2/ 10=0.2● ProbabilitasIndividu3=3/ 10=0.3● ProbabilitasIndividu4=4/ 10=0.4
+Langkah3:MenghitungProbabilitasKumulatif
+● ProbabilitasKumulatifIndividu1=0.1● ProbabilitasKumulatifIndividu2=0.1+0.2=0.3● ProbabilitasKumulatifIndividu3=0.3+0.3=0.6● ProbabilitasKumulatifIndividu4=0.6+0.4=1.0
+Langkah4:MenghasilkanBilanganAcak
+89
+Misalkankitamenghasilkanbilanganacakr = 0.45.
+Langkah5:MenentukanIndividuyangTerpilih
+● Individu1:○ ProbabilitasKumulatif=0.1○ Karenar (0.45)>0.1,Individu1tidakterpilih.● Individu2:○ ProbabilitasKumulatif=0.3○ Karenar (0.45)>0.3,Individu2tidakterpilih.● Individu3:○ ProbabilitasKumulatif=0.6○ Karenar (0.45)≤0.6,Individu3terpilih.● TidakperlumemeriksaIndividu4karenasudahmenemukanindividuyangmemenuhikondisi.
+Hasil:
+● Individu3dipilihsebagaiparent.
+MengapaIndividudenganFitnessLebihTinggiMemilikiPeluangLebihBesar?
+● Individu4memilikiprobabilitasseleksitertinggi(0.4),sehinggamemilikipeluang40%untukdipilih.● Individu1memilikiprobabilitasseleksiterendah(0.1),denganpeluang10%untukdipilih.● Metodeinimemastikanindividudengannilaifitnesslebihtinggimemilikipeluanglebihbesar, tetapitidakmenghilangkankesempatanbagiindividudenganfitnesslebihrendah.B. TournamentSelection:
+DalamTournamentSelection,prosesseleksidilakukandengancaramemilihbeberapaindividusecaraacakdaripopulasi(disebutpesertaturnamen),kemudianindividudengannilaifitnesstertinggidiantaramerekadipilihsebagaiparent.
+Langkah-langkah:
+90
+1. MenentukanUkuranTurnamen(k):
+○ Misalkankitamemilihk = 3, artinyasetiapturnamenakanmelibatkan3pesertayangdipilihsecaraacakdaripopulasi.2. MemilihPesertaTurnamen:○ Daripopulasi,pilih3individusecaraacaktanpamemperhatikannilaifitnessmereka.3. MenentukanPemenangTurnamen:○ Diantarapesertayangterpilih,bandingkannilaifitnessmereka.○ Individudengannilaifitnesstertinggidiantarapesertadipilihsebagaiparent.
+Contoh:
+Misalkankitamemilikipopulasidengan6individudannilaifitnessmerekasebagaiberikut:
+● Individu1: Fitness=30● Individu2: Fitness=50● Individu3: Fitness=70● Individu4: Fitness=60● Individu5: Fitness=80● Individu6: Fitness=40
+Langkah1:MenentukanUkuranTurnamen
+● Kitamemilihukuranturnamenk = 3.
+Langkah2:MemilihPesertaTurnamen
+● Secaraacak,misalkankitamemilihIndividu2, Individu4, danIndividu6sebagaipesertaturnamen.
+Langkah3:MenentukanPemenangTurnamen
+● Nilaifitnesspeserta:○ Individu2: Fitness=50○ Individu4: Fitness=60○ Individu6: Fitness=40
+91
+● PemenangturnamenadalahIndividu4denganfitnesstertinggi(60).
+Hasil:
+● Individu4dipilihsebagaiparentpertama.
+Prosesdiulangiuntukmemilihparentkeduadenganlangkahyangsama.
+KeuntunganTournamentSelection:
+● SelektifTerhadapFitnessTinggi: Individudenganfitnesstinggimemilikipeluanglebihbesaruntukdipilih,tetapiindividudenganfitnesslebihrendahmasihmemilikikesempatan.● Kontrol TekananSeleksi: Ukuranturnamenk mempengaruhitekananseleksi.
+Semakinbesark, semakintinggikemungkinanindividudenganfitnesstinggidipilih.
+PadaSebuahFolderdengannamaAlgoritmaGenetika, tambahkanfiledenganNamaFileselection.py, kemudianketikkankodeberikut
+importrandom
+# FungsiuntukRouletteWheelSelectiondefroulette_wheel_selection(populasi,fitness_populasi):total_fitness= sum(fitness_populasi)if total_fitness== 0:idx= random.randrange(len(populasi))returnpopulasi[idx],idx # Mengembalikanindividudanindeksnyaprobabilitas= [fitness/ total_fitnessforfitnessinfitness_populasi]kumulatif_prob= []kumulatif= 0forp in probabilitas:kumulatif+= pkumulatif_prob.append(kumulatif)r = random.random()fori, kum_probin enumerate(kumulatif_prob):if r <= kum_prob:returnpopulasi[i],i # Mengembalikanindividudanindeksnyareturnpopulasi[-1],len(populasi)-1# Jikatidakadayangmemenuhi,kembalikanindividuterakhir
+92
+# FungsiuntukTournamentSelectiondeftournament_selection(populasi,fitness_populasi,k=3):if len(populasi)< k:k = len(populasi)peserta_indices= random.sample(range(len(populasi)),k)peserta= [(populasi[i],fitness_populasi[i],i) fori inpeserta_indices]peserta.sort(key=lambdax: x[1],reverse=True)returnpeserta[0][0],peserta[0][2]# Mengembalikanindividudanindeksnya
+# Definisikanpopulasiawaldanfitness_populasipopulasi_awal= ['individu1','individu2','individu3','individu4']fitness_populasi= [10,20,30,40]
+# Membuatsalinanpopulasidanfitnessuntukdimodifikasiavailable_populasi= populasi_awal.copy()available_fitness= fitness_populasi.copy()
+# Contohpenggunaan# MemilihParent1 menggunakanRouletteWheelSelectionparent1,idx1= roulette_wheel_selection(available_populasi,available_fitness)# Menghapusparent1daridaftaravailable_populasidanavailable_fitnessdelavailable_populasi[idx1]delavailable_fitness[idx1]
+# MemilihParent2 menggunakanTournamentSelectionparent2,idx2= tournament_selection(available_populasi,available_fitness)# Menghapusparent2daridaftaravailable_populasidanavailable_fitnessdelavailable_populasi[idx2]delavailable_fitness[idx2]
+print("\nParentTerpilih:")print(f"Parent1: {parent1}")print(f"Parent2: {parent2}")
+PenjelasanKodePythonsecaraDetail:
+● Fungsiroulette_wheel_selection:
+○ Parameter:
+93
+■
+populasi: Listindividudalampopulasi.
+■
+fitness_populasi: Listnilaifitnessmasing-masingindividu.
+○ Proses:
+■ Menghitungtotal_fitnessdenganmenjumlahkansemuanilaifitnessdalampopulasi.
+■ Jikatotal_fitnessadalah0(semuafitness0),makamemilihindividusecaraacak.■ Menghitungprobabilitaspemilihansetiapindividudenganmembaginilaifitnessindividudengantotal_fitness.
+■ Membuatlistkumulatif_probyangberisiprobabilitaskumulatif.
+■ Menghasilkanbilanganacakrantara0dan1.
+■ Menentukanindividuyangterpilihdenganmembandingkanrdengankumulatif_prob.
+○ Return:■ Individuyangterpilihsebagaiparent.
+● Fungsitournament_selection:
+○ Parameter:
+■
+populasi: Listindividudalampopulasi.
+■
+fitness_populasi: Listnilaifitnessmasing-masingindividu.
+■
+k: Jumlahindividuyangdipilihuntukturnamen(default3).
+○ Proses:
+■ Memilihkindividusecaraacakdaripopulasimenggunakanrandom.sample.
+■ Mengurutkanpesertaturnamenberdasarkannilaifitnesssecaramenurun.■ Memilihindividudenganfitnesstertinggisebagaipemenangturnamen.○ Return:■ Individuyangterpilihsebagaiparent.● ContohPenggunaan:
+○ Memilihparent1menggunakanmetodeRouletteWheelSelection.
+○ Memilihparent2menggunakanmetodeTournamentSelection.
+94
+○ Menampilkankromosomparentyangterpilih.
+Hasildarikodetersebutakanmenyerupaisebagaiberikut.
+ParentTerpilih:Parent1: individu4Parent2: individu3
+atau,danlainsebagainya.
+ParentTerpilih:Parent1: individu1Parent2: individu4
+4. ProsesCrossoverCrossover(jugadikenalsebagairekombinasiataukawinsilang)adalahtahappentingdalamalgoritmagenetika.Berikutadalahbeberapapointerkaitprosescrossover:● Setiapkromosomdariorangtuadapatmenghasilkanketurunan(offspring)melaluimekanismecrossover.● Tujuanutamadari crossoveradalahmenghasilkankumpulanketurunan(populasi)yanglebihbaikdaripadagenerasisebelumnya.● Setiaporangtua dipilihmelaluioperatorseleksi,sepertiRouletteWheelSelection(RWS),TournamentSelection(TS),atauRankSelection(RS).\
+Beberapametodecrossover:● One-PointCrossover: Memotongkromosomdisatutitikdanmenukarbagiansetelahtitiktersebutantarakeduaparent.
+95
+
+● Two-PointCrossover:Memotongkromosomdi dua titikdan menukarsegmendiantarakeduatitiktersebut.
+● UniformCrossover: Setiapgenpadaanakdipilihsecaraacakdarisalahsatuparent.
+- Buatdulupolamaskingpertukarangen-nya- Aturan:genmasking1->tukar, genmasking0->tidakditukar- JikagenParent1 tersebutmenemuiangka0 padaindeksmaskyangsamadengangentersebutmakaChild1akanmemasukkannilaiindeksParent1,begitupundenganParent2danChild2.- JikagenParent1 tersebutmenemuiangka1 padaindeksmaskyangsamadengangentersebutmakaChild1akanmemasukkannilaiindeksParent2,danChild2akanmemasukkannilaiindeksParent1.- Note:polamaskingdapatdi-generateulangsetiapgenerasi
+PadaSebuahFolderdengannamaAlgoritmaGenetika, tambahkanfiledenganNamaFilecrossover.py, kemudianketikkankodeberikut
+importrandom
+# One-PointCrossoverdefone_point_crossover(parent1,parent2):titik_potong= random.randint(1,len(parent1)-1)anak1= parent1[:titik_potong]+ parent2[titik_potong:]
+96
+
+anak2= parent2[:titik_potong]+ parent1[titik_potong:]returnanak1,anak2
+# Two-PointCrossoverdeftwo_point_crossover(parent1,parent2):titik1= random.randint(1,len(parent1)-2)titik2= random.randint(titik1+1,len(parent1)-1)anak1= parent1[:titik1]+ parent2[titik1:titik2]+parent1[titik2:]anak2= parent2[:titik1]+ parent1[titik1:titik2]+parent2[titik2:]returnanak1,anak2
+# UniformCrossoverdefuniform_crossover(parent1,parent2):# Membuatmaskacakmask= [random.randint(0,1) for_ inrange(len(parent1))]anak1= []anak2= []fori in range(len(parent1)):if mask[i]== 0:# Jikamaskbernilai0, ambilgendariparent1untukanak1,danparent2untukanak2anak1.append(parent1[i])anak2.append(parent2[i])else:# Jikamaskbernilai1, ambilgendariparent2untukanak1,danparent1untukanak2anak1.append(parent2[i])anak2.append(parent1[i])returnanak1,anak2
+# Contohpenggunaanparent1= [1,0, 1, 1, 0] # Contohparent1parent2= [0,1, 0, 0, 1] # Contohparent2
+anak1,anak2= one_point_crossover(parent1,parent2)
+print("\nAnakHasilCrossover:")print(f"Anak1: {anak1}")print(f"Anak2: {anak2}")
+PenjelasanKodePythonsecaraDetail:
+● One-PointCrossover:
+97
+○ Parameter:■ parent1, parent2: Kromosomparentyangakandicrossover.○ Proses:■ Memilihtitik_potongsecaraacakantara1danlen(parent1)- 1.
+■ Membuatanak1denganmenggabungkangendariparent1
+sebelumtitik_potongdangendariparent2setelahtitik_potong.
+■ Membuatanak2dengancarasebaliknya.○ Return:■ Duakromosomanakhasilcrossover.● Two-PointCrossover:○ Memilihduatitikpotongtitik1dantitik2secaraacak.○ Menukarsegmengenantarakeduatitikpotong.● UniformCrossover:○ Dalamcontohini,kitamenetapkanmasksecaraacak○ Untuksetiapgen,ditentukanberdasarkanindeksyangsamadenganmaskapakahgentersebutakandiambildariparent1atauparent2.○ JikagenParent1tersebutmenemuiangka0padaindeksmaskyangsamadengangentersebutmakaChild1akanmemasukkannilaiindeksParent1,begitupundenganParent2danChild2.○ JikagenParent1tersebutmenemuiangka1padaindeksmaskyangsamadengangentersebutmakaChild1akanmemasukkannilaiindeksParent2,danChild2akanmemasukkannilaiindeksParent1.● ContohPenggunaan:○ Menggunakanone_point_crossoveruntukmenghasilkananak1
+dananak2.○ Menampilkankromosomanakyangdihasilkan.
+Hasildarikodetersebutakanmenyerupaisebagaiberikutdanbisajugaacak.
+AnakHasilCrossover:
+98
+Anak1: [1,0, 1, 0, 1]Anak2: [0,1, 0, 1, 0]
+5. ProsesMutasiMutasiadalahprosesmelakukanperubahankecilpadakromosomindividuuntuk mempertahankankeragamangenetikdalampopulasidan mencegahkonvergensiprematur. Mutasidilakukandenganmengubahsatuataubeberapagendalamkromosom.Metodemutasiyangumumdigunakan:● SwapMutation:Menukarposisiduagendalamkromosom.● InversionMutation:Membalikurutangendalamsegmentertentu.● UniformMutation:Mengubahnilaigendenganprobabilitastertentu.
+ContohCaraKerja:
+● SwapMutation:○ Kromosomsebelummutasi: [1,0, 1,1, 0]○ Menukargenke-2danke-4.○ Kromosomsetelahmutasi: [1,1, 1,0, 0]
+PadaSebuahFolderdengannamaAlgoritmaGenetika, tambahkanfiledenganNamaFilemutation.py, kemudianketikkankodeberikut
+importrandom
+# SwapMutationdefswap_mutation(kromosom):# Pastikankromosomadalahlistkromosom= list(kromosom)# Konversike listjikaperlu
+# Pilihduaposisiuntukswapposisi1,posisi2= random.sample(range(len(kromosom)),2)
+# Melakukanswapkromosom[posisi1],kromosom[posisi2]= kromosom[posisi2],kromosom[posisi1]
+returnkromosom
+99
+# InversionMutationdefinversion_mutation(kromosom):posisi1= random.randint(0,len(kromosom)- 2)posisi2= random.randint(posisi1+ 1, len(kromosom)- 1)# Perbaikandi sini:konversihasilreversedke listkromosom[posisi1:posisi2]=list(reversed(kromosom[posisi1:posisi2]))returnkromosom
+# UniformMutationdefuniform_mutation(kromosom,mutation_rate=0.1):# Pastikankromosomadalahlistkromosom= list(kromosom)# Konversike listjikaperlu
+fori in range(len(kromosom)):if random.random()< mutation_rate:kromosom[i]= 1 - kromosom[i]# Membaliknilaigenreturnkromosom
+# Definisikananak1sebelumdigunakananak1= [0,1, 1, 0, 1] # Contohkromosom,sesuaikandengankebutuhanAnda
+# Contohpenggunaanmutasi_anak1= swap_mutation(anak1.copy())# SwapMutationmutasi_anak2= inversion_mutation(anak1.copy())# InversionMutationmutasi_anak3= uniform_mutation(anak1.copy())# UniformMutation
+# Menampilkanhasilsetelahmutasiprint("\nAnakSetelahMutasi:")print(f"Anak1 (SwapMutation):{mutasi_anak1}")print(f"Anak2 (InversionMutation):{mutasi_anak2}")print(f"Anak3 (UniformMutation):{mutasi_anak3}")
+PenjelasanKodePythonsecaraDetail:
+● SwapMutation:○ Parameter:■ kromosom: Kromosomyangakandimutasi.○ Proses:■ Memilihduaposisigenposisi1danposisi2secaraacak.
+100
+■ Menukargenpadaposisitersebut.○ Return:■ Kromosomyangtelahdimutasi.● InversionMutation:○ Memilihduatitikposisi1danposisi2untukmenentukansegmen.○ Membalikurutangendalamsegmentersebut.● UniformMutation:○ Untuksetiapgen,denganprobabilitasmutation_rate, membaliknilaigentersebut(dari0menjadi1atausebaliknya).● ContohPenggunaan:○ Melakukanmutasipadaanak1menggunakanswap_mutation.○ Menampilkankromosomanaksetelahmutasi.
+Hasildarikodetersebutakanmenyerupaisebagaiberikutdanbisajugaacak.
+AnakSetelahMutasi:Anak1 (SwapMutation):[1,1, 1, 0, 0]Anak2 (InversionMutation):[0,1, 1, 0, 1]Anak3 (UniformMutation):[0,1, 1, 0, 1]
+6. ProsesPengulanganGenerasiProsespengulangangenerasimelibatkaniterasiprosesevaluasi,seleksi,crossover, danmutasiuntuksejumlahgenerasitertentu.Tujuanutamanyaadalahuntukmenemukansolusiyangoptimalataumendekatioptimalseiringdenganberjalannyagenerasi.
+Setiapgenerasiterdiridarilangkah-langkahberikut:
+1) EvaluasiFitness: Menghitungnilaifitnesssetiapindividudalampopulasi.2) Seleksi: Memilihindividu-individuyangakanmenjadiparent.3) Crossover: Menghasilkananak-anakbarudariparentyangterpilih.
+101
+4) Mutasi: Melakukanmutasipadaanak-anakuntukmempertahankankeragamangenetik.5) PembentukanPopulasiBaru: Menggantikanpopulasilamadenganpopulasibaruyangterdiridarianak-anak.
+PadaSebuahFolderdengannamaAlgoritmaGenetika, tambahkanfiledenganNamaFilemain.py, kemudianketikkankodeberikut.untukimportbisa
+importrandomimportmatplotlib.pyplotas pltimportnumpyas np
+# Mengimporfungsi-fungsidarifilelainfrominisiasipopulasiimportinisialisasi_populasifromEvaluasiFitnessimporthitung_fitnessfromselectionimportroulette_wheel_selection,tournament_selectionfromcrossoverimportone_point_crossover,two_point_crossover,uniform_crossoverfrommutationimportswap_mutation,inversion_mutation,uniform_mutation
+# Databarang:(nama,nilai,berat)barang= [("Barang1",60,10),("Barang2",100,20),("Barang3",120,30),("Barang4",90,25),("Barang5",69,11),("Barang6",70,9),("Barang7",80,15),("Barang8",90,10),("Barang9",25,3)]
+defrun_ga(jumlah_generasi,jumlah_populasi,prob_crossover,prob_mutasi,kapasitas_tas):# Menentukanjumlahgenberdasarkanjumlahbarangjumlah_gen= len(barang)
+# Inisialisasipopulasiawalpopulasi= inisialisasi_populasi(jumlah_populasi,jumlah_gen)# Menghitungfitnessuntuksetiapindividudalampopulasifitness_populasi= [hitung_fitness(individu,barang,kapasitas_tas)forindividuin populasi]# Listuntukmenyimpannilaifitnessterbaik,terburuk,danrata-ratasetiapgenerasibest_fitness_list= []worst_fitness_list= []avg_fitness_list= []all_fitness= []
+# Variabeluntukmenyimpanindividuterbaiksecarakeseluruhanbest_individu= Nonebest_fitness_overall= 0
+# Prosesevolusiselamajumlahgenerasiyangditentukanforgenerasiin range(jumlah_generasi):# Evaluasifitnesspopulasisaatinifitness_populasi= [hitung_fitness(individu,barang,kapasitas_tas)forindividuin populasi]
+102
+# Menyimpannilaifitnessuntukplottingbest_fitness= max(fitness_populasi)worst_fitness= min(fitness_populasi)avg_fitness= sum(fitness_populasi)/ len(fitness_populasi)best_fitness_list.append(best_fitness)worst_fitness_list.append(worst_fitness)avg_fitness_list.append(avg_fitness)all_fitness.append(fitness_populasi.copy())
+# Menyimpanindividuterbaiksecarakeseluruhanif best_fitness> best_fitness_overall:best_fitness_overall= best_fitnessindex_best= fitness_populasi.index(best_fitness)best_individu= populasi[index_best]
+new_populasi= []used_indices= []
+# Membentukpopulasibaruwhilelen(new_populasi)< jumlah_populasi:# Seleksiorangtuamenggunakanroulettewheelparent1,idx1= roulette_wheel_selection(populasi,fitness_populasi)used_indices.append(idx1)# Memastikanorangtuakeduaberbedaavailable_indices= [i fori in range(len(populasi))if i notinused_indices]if notavailable_indices:used_indices= [idx1]available_indices= [i fori in range(len(populasi))if i !=idx1] parent2,_ = roulette_wheel_selection([populasi[i]fori inavailable_indices],[fitness_populasi[i]fori in available_indices])used_indices.append(available_indices[_])
+# Crossoveruntukmenghasilkananakif random.random()< prob_crossover:anak1,anak2= one_point_crossover(parent1,parent2)else:anak1,anak2= parent1[:],parent2[:]
+# Mutasipadaanakif random.random()< prob_mutasi:anak1= swap_mutation(anak1)if random.random()< prob_mutasi:anak2= swap_mutation(anak2)
+# Menambahkananakke populasibarunew_populasi.extend([anak1,anak2])
+# Memastikanpopulasibarusesuaidenganjumlahpopulasipopulasi= new_populasi[:jumlah_populasi]
+# Menampilkangrafikfitnessplt.figure(figsize=(12,7))
+# Plotsemuanilaifitnessdengantransparansirendahfori in range(jumlah_generasi):x = [i+1]*len(all_fitness[i])y = all_fitness[i]plt.scatter(x,y, color='gray',alpha=0.1)
+# Plotnilaifitnessterbaik,terburuk,danrata-rataplt.plot(range(1,jumlah_generasi+1),best_fitness_list,color='blue',label='FitnessTertinggi')
+103
+plt.plot(range(1,jumlah_generasi+1),worst_fitness_list,color='yellow',label='FitnessTerendah')plt.plot(range(1,jumlah_generasi+1),avg_fitness_list,color='red',label='FitnessRata-rata')
+plt.title('PerkembanganNilaiFitness')plt.xlabel('Generasi')plt.ylabel('NilaiFitness')plt.legend()plt.grid(True)plt.show()
+# Menampilkanbarangyangterpilihdalamknapsackterbaikselected_items= [barang[i][0]fori in range(len(best_individu))ifbest_individu[i]== 1]selected_value= hitung_fitness(best_individu,barang,kapasitas_tas)selected_weight= sum([barang[i][2]fori in range(len(best_individu))ifbest_individu[i]== 1])
+print(f"NilaiFitnessTerbaik:{selected_value}")print(f"TotalBobot:{selected_weight}")print("BarangTerpilih:")foritemin selected_items:print(f"-{item}")
+# MenjalankanGA denganparameterberikutrun_ga(jumlah_generasi=50,jumlah_populasi=20,prob_crossover=0.5,prob_mutasi=0.1,kapasitas_tas=50)
+PenjelasanKodePythonsecaraDetail:
+KodediatasmerupakanimplementasidariAlgoritmaGenetika(GeneticAlgorithm/GA)untukmenyelesaikanmasalahKnapsackProblem,dimanatujuanutamanyaadalahmemilihkombinasibarangyangmemilikinilai(fitness)terbaikdengantetapmempertimbangkanbatasankapasitastas.Algoritmainiterdiridaribeberapalangkahutama,yaituinisiasipopulasi,seleksi,crossover, mutasi,danevaluasifitnesspadasetiapgenerasi.
+Berikutadalahpenjelasanrincidariprosesberjalannyaprogramdariawalhinggaakhir, sertabagaimanakromosom(solusi)bertransformasidariinisiasihinggamenghasilkansolusiterbaik.
+1) Inisialisasi
+a.BarangdanParameter
+104
+Sebelumalgoritmaberjalan,kitamendefinisikandaftarbarangyangtersediauntukdipilih.Setiapbarangmemilikitigaatribut:
+● Namabarang(misalnya,"Barang1"),● Nilaibarangataukeuntungan(misalnya,60),● Beratbarang(misalnya,10).
+Parameterpentingyangdigunakandalamalgoritmaadalah:
+● jumlah_generasi: Jumlahiterasi(generasi)dimanapopulasiakanberevolusi.● jumlah_populasi: Jumlahindividu(solusipotensial)dalamsetiapgenerasi.● prob_crossover: Probabilitasterjadinyacrossover(kombinasiduaindividuuntukmenghasilkanindividubaru).● prob_mutasi: Probabilitasmutasi(perubahanacakdalamkromosom).● kapasitas_tas: Batasanberatmaksimumyangdapatdibawaolehtas(knapsack).
+b.InisialisasiPopulasi
+Diawal,algoritmamenginisialisasipopulasiawalsecaraacak.Setiapindividudalampopulasiadalahkromosomyangmerepresentasikansolusipotensial,dimanasetiapgendalamkromosomberisi0atau1.Genbernilai1berartibarangdipilihuntukdimasukkankedalamtas,sedangkangenbernilai0berartibarangtidakdipilih.
+populasi= inisialisasi_populasi(jumlah_populasi,jumlah_gen)
+Padatahapini,sejumlahindividu(kromosom)dihasilkansecaraacak.
+2) EvaluasiFitness
+Setiapindividudalampopulasidievaluasiuntukmengetahuiseberapabaiksolusiyangdihasilkan.Fungsihitung_fitnessmenghitungnilaitotalbarangyangdipilihdanmembandingkannyadengankapasitastas.Jikatotalberatbarangyangdipilihmelebihikapasitastas,makafitnessindividutersebutdianggapnol(penalti).
+105
+fitness_populasi= [hitung_fitness(individu,barang,kapasitas_tas)forindividuin populasi]
+3) SeleksiOrangTua
+Prosesseleksibertujuanuntukmemilihduaindividudaripopulasisebagaiorangtua(parent)yangakandikombinasikanmenggunakancrossoveruntukmenghasilkananakbaru.Padakodeini,digunakanRouletteWheelSelectionuntukmemilihindividuberdasarkanprobabilitasproporsionalterhadapnilaifitness.
+RouletteWheelSelectionbekerjasepertirodaputar, dimanasetiapindividumemilikiprobabilitasuntukdipilih,yangsebandingdengannilaifitness-nya.Individudenganfitnesslebihtinggimemilikikemungkinanlebihbesaruntukdipilih.
+parent1,idx1= roulette_wheel_selection(populasi,fitness_populasi)parent2,_ = roulette_wheel_selection([populasi[i]fori inavailable_indices],[fitness_populasi[i]fori inavailable_indices])
+4) Crossover(Penyilangan)
+Setelahduaorangtuadipilih,merekadikombinasikanmelaluiprosesCrossoveruntukmenghasilkanduaindividubaru(anak).PadakodeinidigunakanOne-PointCrossover, dimanatitikpotongacakditentukan,danbagiandepankromosomdarisatuorangtuadikombinasikandenganbagianbelakangkromosomdariorangtualainnya.
+Jikaprobabilitascrossovertercapai(misalnya0.5),prosesinidijalankan.Jikatidak,anak-anakadalahsalinandariorangtuatanpaperubahan.
+if random.random()< prob_crossover:anak1,anak2= one_point_crossover(parent1,parent2)else:anak1,anak2= parent1[:],parent2[:]
+5) Mutasi
+106
+Setelahcrossover, individubaru(anak)dapatmengalamimutasidenganprobabilitastertentu(misalnya10%).Mutasiadalahperubahanacakpadagendalamkromosom,misalnyadari1menjadi0,atausebaliknya.
+Mutasimembantumenjagakeragamangenetikdalampopulasi,sehinggamencegahalgoritmaterjebakpadasolusilokalyangtidakoptimal.PadakodeinidigunakanSwapMutationuntukmenukarduagendalamkromosom.
+if random.random()< prob_mutasi:anak1= swap_mutation(anak1)if random.random()< prob_mutasi:anak2= swap_mutation(anak2)
+6) PembentukanPopulasiBaru
+Setelahcrossoverdanmutasi,individubaru(anak-anak)ditambahkankedalampopulasibaru.Prosesinidiulanghinggapopulasibarumemilikiukuranyangsamadenganpopulasiasli.Populasibarumenggantikanpopulasilamapadagenerasiberikutnya.
+new_populasi.extend([anak1,anak2])populasi= new_populasi[:jumlah_populasi]
+7) EvaluasidanHasilAkhir
+Setiapgenerasiberakhirdenganevaluasifitnessdanpenyimpananindividuterbaik.Prosesinidiulanguntukjumlahgenerasiyangtelahditentukan.Padaakhirevolusi,individuterbaikditampilkan,besertanilaifitness-nyadanbarang-barangyangterpilihdalamknapsack.
+selected_items= [barang[i][0]fori inrange(len(best_individu))if best_individu[i]== 1]selected_value= hitung_fitness(best_individu,barang,kapasitas_tas)selected_weight= sum([barang[i][2]fori inrange(len(best_individu))if best_individu[i]== 1])
+print(f"NilaiFitnessTerbaik:{selected_value}")
+107
+print(f"TotalBobot:{selected_weight}")print("BarangTerpilih:")foritemin selected_items:print(f"-{item}")
+8) HasilGrafik
+HasilGrafikditunjukandengan3warnayaituwarnakuning(titikfitnessterendah),warnamerah(reratatitikfitness),warnabiru(titikfitnesstertinggi).Sertatitikabu-abumenunjukannilaifitnessindividuyanglainnya,dimanasemakingelapwarnaabu-abunyaberartisemakinbanyakindividudenganfitnessyangserupa.
+Note: NilaiyangacakdantidakratamenunjukanbahwaGAitumemilikisifatvariatifyangtinggidanmemungkinkansegalakemungkinanlainbaiknaikatauturun.
+9) HasilKnapsackTerpilihdenganFItnessTerbaik
+PadaTerminalBagianpalingbawahditunjukanBarangBarangTerpiliholehKnapsackmenggunakanGA.GAmemilihbarangdengannilaifitnessterbaiknamunmaxsizenyamencukupibatastertinggi.
+108
+
+Hasilsebagaiberikut:
+NilaiFitnessTerbaik:329TotalBobot:50BarangTerpilih:- Barang2- Barang5- Barang6- Barang8
+TUGASUploadsourcecodepercobaandiataskeGitHubdengannamarepositorisebagaiberikut,NIM-PraktikumKB-Pertemuan9(Tugasdiselesaikandiwaktupraktikumsekarangjuga)
+Terimakasih,SampaiJumpa👑
+109
