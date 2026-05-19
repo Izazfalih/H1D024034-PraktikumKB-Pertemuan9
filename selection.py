@@ -32,3 +32,29 @@ def tournament_selection(populasi, fitness_populasi, k=3):
     peserta.sort(key=lambda x: x[1], reverse=True)
     
     return peserta[0][0], peserta[0][2] # Mengembalikan individu dan indeksnya
+
+if __name__ == "__main__":
+    # Definisikan populasi awal dan fitness_populasi
+    populasi_awal = ['individu1', 'individu2', 'individu3', 'individu4']
+    fitness_populasi = [10, 20, 30, 40]
+    
+    # Membuat salinan populasi dan fitness untuk dimodifikasi
+    available_populasi = populasi_awal.copy()
+    available_fitness = fitness_populasi.copy()
+    
+    # Contoh penggunaan
+    # Memilih Parent 1 menggunakan Roulette Wheel Selection
+    parent1, idx1 = roulette_wheel_selection(available_populasi, available_fitness)
+    # Menghapus parent1 dari daftar available_populasi dan available_fitness
+    del available_populasi[idx1]
+    del available_fitness[idx1]
+    
+    # Memilih Parent 2 menggunakan Tournament Selection
+    parent2, idx2 = tournament_selection(available_populasi, available_fitness)
+    # Menghapus parent2 dari daftar available_populasi dan available_fitness
+    del available_populasi[idx2]
+    del available_fitness[idx2]
+    
+    print("\nParent Terpilih:")
+    print(f"Parent 1: {parent1}")
+    print(f"Parent 2: {parent2}")
